@@ -11,3 +11,27 @@ int contains(struct point points[], int points_n, struct point point) {
 
     return 0;
 }
+
+int alive_neighbours(struct point p, struct point points[], int points_n) {
+    struct point neighbours[8] = {
+         {.x = p.x-1, .y = p.y-1},
+         {.x = p.x-1, .y = p.y },
+         {.x = p.x-1, .y = p.y+1},
+         {.x = p.x, .y = p.y-1 },
+         {.x = p.x, .y = p.y+1 },
+         {.x = p.x+1 , .y = p.y-1},
+         {.x = p.x+1 , .y = p.y},
+         {.x = p.x+1, .y = p.y+1}
+    };
+
+    int alive_neighbours = 0;
+    for(int i = 0; i < NEIGHBOURS; i++) {
+        if(contains(points, points_n, neighbours[i]) == 1) {
+            alive_neighbours++;
+        }
+    }
+
+    return alive_neighbours;
+}
+
+

@@ -14,7 +14,11 @@
 
 int main(void) {
     int generation = 0;
-    struct point alive[2] ={{.x=1, .y=1}, {.x=2, .y=2} };
+    struct point alive[3] ={
+        {.x=5, .y=4}, 
+        {.x=5, .y=5},
+        {.x=5, .y=6},
+    };
 
     for(;;generation++){
         clear();
